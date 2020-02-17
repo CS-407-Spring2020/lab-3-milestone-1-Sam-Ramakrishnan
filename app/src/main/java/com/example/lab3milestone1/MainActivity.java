@@ -1,10 +1,16 @@
 package com.example.lab3milestone1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btnOpenDialog;
@@ -20,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
                 openDIalog();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()!=R.id.menu_item_option3)
+        Toast.makeText(MainActivity.this, item.getTitle(),Toast.LENGTH_LONG).show();
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void openDIalog() {

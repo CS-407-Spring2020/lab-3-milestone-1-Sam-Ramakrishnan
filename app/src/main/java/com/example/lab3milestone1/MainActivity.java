@@ -23,5 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openDIalog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "alert dialog");
     }
 }
